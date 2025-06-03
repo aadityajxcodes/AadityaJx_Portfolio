@@ -1,0 +1,316 @@
+.skills-section {
+  padding: 6rem 0;
+  background: var(--background);
+}
+
+.section-header {
+  text-align: center;
+  margin-bottom: 4rem;
+}
+
+.section-title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  color: var(--text);
+}
+
+.section-subtitle {
+  color: var(--text-light);
+  font-size: 1.1rem;
+}
+
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  margin-bottom: 4rem;
+}
+
+.skill-category {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-radius: 1rem;
+  padding: 2.5rem;
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.15);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  color: var(--text);
+  position: relative;
+  overflow: hidden;
+}
+
+.skill-category::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(135deg, rgba(33, 150, 243, 0.1), rgba(156, 39, 176, 0.1));
+  z-index: -1;
+}
+
+.skill-category:hover {
+  transform: translateY(-7px);
+  box-shadow: 0 15px 32px 0 rgba(31, 38, 135, 0.25);
+  border-color: rgba(255, 255, 255, 0.3);
+}
+
+.skill-category .category-title,
+.skill-category .skill-name {
+  color: var(--text);
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.skill-category .skill-bar {
+  background: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+}
+
+.skill-category .skill-progress {
+  background: linear-gradient(90deg, var(--primary), var(--accent));
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.skill-category .skill-progress::after {
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.3),
+    transparent
+  );
+}
+
+.category-title {
+  font-size: 1.6rem;
+  font-weight: 700;
+  margin-bottom: 2rem;
+  color: var(--secondary);
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.category-icon {
+  color: var(--accent);
+  font-family: var(--font-mono);
+  font-size: 1.2rem;
+}
+
+.skills-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  flex-grow: 1;
+}
+
+.skill-item {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.skill-info {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.skill-name {
+  font-weight: 500;
+  color: var(--accent);
+  font-family: var(--font-mono);
+  font-size: 1rem;
+}
+
+.skill-bar {
+  height: 10px;
+  background: #e2e8f0;
+  border-radius: 5px;
+  overflow: hidden;
+}
+
+.skill-progress {
+  height: 100%;
+  background: var(--primary);
+  border-radius: 5px;
+  position: relative;
+}
+
+.skill-progress::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.2),
+    transparent
+  );
+  animation: shine 2s infinite;
+}
+
+.tech-stack {
+  text-align: center;
+  background-color: #1a273b;
+  padding: 3rem 1rem;
+  border-radius: 1rem;
+  margin-top: 4rem;
+}
+
+.tech-stack-title {
+  font-size: 1.8rem;
+  font-weight: 700;
+  margin-bottom: 3rem;
+  color: var(--accent);
+  font-family: var(--font-sans);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.tech-icons {
+  max-width: 800px;
+  margin: 0 auto;
+  position: relative;
+  height: 500px;
+  animation: rotateCircle 20s linear infinite;
+  width: 100%;
+}
+
+.tech-icon {
+  transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+  color: var(--text-light);
+  perspective: 1000px;
+  transform-style: preserve-3d;
+  position: absolute;
+  transform: translate(-50%, -50%);
+}
+
+.tech-icon:hover {
+  transform: translate(-50%, -50%) scale(1.4) translateY(-15px);
+  z-index: 1;
+  cursor: pointer !important;
+}
+
+.tech-icon-img {
+  width: 48px;
+  height: 48px;
+  object-fit: contain;
+  filter: grayscale(100%);
+  transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+  transform-style: preserve-3d;
+  backface-visibility: hidden;
+}
+
+.tech-icon:hover .tech-icon-img {
+  filter: grayscale(0%);
+}
+
+@keyframes float {
+  0% {
+    transform: rotateY(180deg) translateY(0px);
+  }
+  50% {
+    transform: rotateY(180deg) translateY(-10px);
+  }
+  100% {
+    transform: rotateY(180deg) translateY(0px);
+  }
+}
+
+/* Add a glow effect on hover */
+/* Remove the ::after pseudo-element for the glow effect */
+
+@keyframes shine {
+  0% { transform: translateX(-100%); }
+  100% { transform: translateX(100%); }
+}
+
+/* Add a circular motion effect */
+/* Remove the ::after pseudo-element for the glow effect */
+/*
+.tech-icon::after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(circle, rgba(6, 182, 212, 0.2) 0%, transparent 70%);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  pointer-events: none;
+  border-radius: 50%;
+}
+
+.tech-icon:hover::after {
+  opacity: 1;
+}
+*/
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+/* Add keyframes for circular rotation */
+@keyframes rotateCircle {
+  0% {
+    transform: rotate(0deg) translateX(-50px); /* Start slightly left and not rotated */
+  }
+  50% {
+    transform: rotate(180deg) translateX(50px); /* Move right and rotate halfway */
+  }
+  100% {
+    transform: rotate(360deg) translateX(-50px); /* Return to start horizontal position and complete rotation */
+  }
+}
+
+/* Add a media query for larger screens to adjust tech icon size/spacing */
+@media (min-width: 1200px) {
+  .tech-icons {
+    height: 600px; /* Increase height for larger screens */
+  }
+  
+  .tech-icon-img {
+    width: 60px; /* Increase icon size */
+    height: 60px; /* Increase icon size */
+  }
+}
+
+@media (min-width: 1600px) {
+  .tech-icons {
+    max-width: 1000px; /* Allow tech icons to take more width */
+    height: 700px; /* Increase height further */
+  }
+  
+  .tech-icon-img {
+    width: 72px; /* Further increase icon size */
+    height: 72px; /* Further increase icon size */
+  }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .skills-section {
+    padding: 4rem 0;
+  }
+
+  .section-title {
+    font-size: 2rem;
+  }
+
+  .skills-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .tech-icons {
+    grid-template-columns: repeat(3, 1fr);
+  }
+} 

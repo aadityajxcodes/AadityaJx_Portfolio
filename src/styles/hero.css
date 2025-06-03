@@ -1,0 +1,255 @@
+.hero-section {
+  position: relative;
+  padding-top: 80px;
+  overflow: hidden;
+}
+
+.hero-content {
+  padding: 2rem 0;
+}
+
+.hero-greeting {
+  color: var(--accent);
+  font-family: var(--font-mono);
+  font-size: 1.1rem;
+  margin-bottom: 1rem;
+}
+
+.hero-title {
+  font-size: 4rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  color: var(--text);
+}
+
+.code-bracket {
+  color: var(--accent);
+  font-family: var(--font-mono);
+}
+
+.hero-subtitle {
+  font-size: 2.5rem;
+  font-weight: 600;
+  margin-bottom: 1.5rem;
+  color: var(--text);
+}
+
+.typing-cursor {
+  color: var(--accent);
+  animation: blink 1s infinite;
+}
+
+.hero-description {
+  font-size: 1.2rem;
+  color: var(--text-light);
+  margin-bottom: 2rem;
+  max-width: 600px;
+}
+
+.hero-cta {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+}
+
+.btn-outline {
+  border: 2px solid var(--primary);
+  color: var(--primary);
+  background: transparent;
+  padding: 0.75rem 1.5rem;
+  border-radius: 0.5rem;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+.btn-outline:hover {
+  background: var(--primary);
+  color: white;
+  transform: translateY(-2px);
+}
+
+/* CTA Arrow styles and animation */
+.cta-arrow {
+  color: var(--primary);
+  font-size: 1.5rem;
+  animation: bounceArrowIcon 1s infinite;
+  margin-left: 0.5rem;
+}
+
+@keyframes bounceArrowIcon {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(5px); }
+}
+
+/* Code Window Styles */
+.code-window {
+  background: var(--secondary);
+  border-radius: 1rem;
+  overflow: hidden;
+  box-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1);
+  max-width: 700px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.window-header {
+  background: #2d3748;
+  padding: 0.75rem;
+  display: flex;
+  align-items: center;
+}
+
+.window-buttons {
+  display: flex;
+  gap: 0.5rem;
+  margin-right: 1rem;
+}
+
+.window-button {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+}
+
+.window-button.red { background: #ff5f56; }
+.window-button.yellow { background: #ffbd2e; }
+.window-button.green { background: #27c93f; }
+
+.window-title {
+  color: #a0aec0;
+  font-size: 0.875rem;
+  font-family: var(--font-mono);
+}
+
+.window-content {
+  padding: 1.5rem;
+}
+
+.window-content pre {
+  margin: 0;
+  font-family: var(--font-mono);
+  font-size: 0.875rem;
+  line-height: 1.5;
+  color: #e2e8f0;
+}
+
+.window-content code {
+  display: block;
+}
+
+/* Scroll Indicator */
+.hero-scroll-indicator {
+  position: absolute;
+  bottom: 2rem;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.mouse {
+  width: 30px;
+  height: 50px;
+  border: 2px solid var(--text);
+  border-radius: 15px;
+  position: relative;
+}
+
+.wheel {
+  width: 4px;
+  height: 8px;
+  background: var(--text);
+  position: absolute;
+  top: 8px;
+  left: 50%;
+  transform: translateX(-50%);
+  border-radius: 2px;
+  animation: scroll 2s infinite;
+}
+
+.scroll-arrow {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.25rem;
+}
+
+.scroll-arrow span {
+  display: block;
+  width: 10px;
+  height: 10px;
+  border-bottom: 2px solid var(--text);
+  border-right: 2px solid var(--text);
+  transform: rotate(45deg);
+  animation: arrow 2s infinite;
+}
+
+.scroll-arrow span:nth-child(2) {
+  animation-delay: 0.2s;
+}
+
+@keyframes scroll {
+  0% { transform: translateX(-50%) translateY(0); opacity: 1; }
+  100% { transform: translateX(-50%) translateY(20px); opacity: 0; }
+}
+
+@keyframes arrow {
+  0% { opacity: 0; }
+  50% { opacity: 1; }
+  100% { opacity: 0; }
+}
+
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+
+/* Responsive Design */
+@media (max-width: 991px) {
+  .hero-title {
+    font-size: 3rem;
+  }
+  
+  .hero-subtitle {
+    font-size: 2rem;
+  }
+  
+  .hero-image {
+    margin-top: 3rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .hero-title {
+    font-size: 2.5rem;
+  }
+  
+  .hero-subtitle {
+    font-size: 1.75rem;
+  }
+  
+  .hero-cta {
+    flex-direction: column;
+  }
+  
+  .btn-outline {
+    margin-top: 1rem;
+  }
+}
+
+@media (min-width: 992px) {
+  .hero-section .container .row {
+    align-items: center;
+  }
+  
+  .hero-content {
+    padding-right: 2rem;
+  }
+  
+  .hero-image {
+    padding-left: 2rem;
+  }
+} 
