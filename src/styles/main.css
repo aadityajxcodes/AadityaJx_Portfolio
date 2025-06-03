@@ -571,20 +571,72 @@ body.menu-open main {
 
 /* Responsive Navigation */
 @media (max-width: 991px) {
-  .navbar-nav {
+  .navbar .container {
+    display: flex;
+    justify-content: space-between;
     align-items: center;
   }
-  
-  .navbar-nav .nav-item {
-    margin: 0.5rem 0;
+
+  .navbar-nav {
+    flex-direction: column; /* Stack nav items vertically */
+    align-items: center; /* Center nav items */
   }
-  
+
+  .navbar-nav .nav-item {
+    margin: 0.5rem 0; /* Add vertical margin */
+  }
+
   .navbar-nav .btn-primary {
-    margin-top: 1rem;
+    margin-top: 1rem; /* Add margin above the resume button */
+  }
+
+  .navbar-toggler {
+    margin-left: auto; /* Push the toggler to the right */
+    padding: 0.25rem 0.75rem; /* Adjust padding */
+    font-size: 1.25rem;
+    line-height: 1;
+    background-color: transparent; /* Ensure no background */
+    border: 1px solid transparent; /* Ensure no border */
+    border-radius: 0.25rem;
+    transition: box-shadow 0.15s ease-in-out;
+    color: rgba(255, 255, 255, 0.55); /* Adjust color if needed */
+  }
+
+  .navbar-toggler:focus {
+    text-decoration: none;
+    outline: 0;
+    box-shadow: 0 0 0 0.25rem;
+  }
+
+  .navbar-toggler-icon {
+    display: inline-block;
+    width: 1.5em;
+    height: 1.5em;
+    vertical-align: middle;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 100%;
+    /* You might need to define the actual hamburger icon appearance here if not using a default */
+    /* Example using a background image: */
+    /* background-image: url("data:..."); */
+  }
+
+  .navbar-collapse {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background-color: var(--secondary);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+    padding: 1rem;
+  }
+
+  .navbar-collapse:not(.show) {
+    display: none;
   }
 }
 
-/* Responsive Cards */
 @media (max-width: 768px) {
   .card {
     margin-bottom: 1rem;
