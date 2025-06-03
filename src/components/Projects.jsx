@@ -41,7 +41,7 @@ const Projects = () => {
       title: "Personal Portfolio Website",
       description: "My personal portfolio website showcasing my skills and projects. Built with React and styled components for a modern and responsive design.",
       technologies: ["React", "Styled Components", "CSS", "HTML", "JavaScript"],
-      github: "https://github.com/aadityajxcodes/aadityajxPortfolio/tree/main", // Corrected GitHub repo link
+      github: "https://github.com/aadityajxcodes/aadityajx_Portfolio", // Corrected GitHub repo link
       // Add any other relevant properties like live demo link or icon
     },
     {
