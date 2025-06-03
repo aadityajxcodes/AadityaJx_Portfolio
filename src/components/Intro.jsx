@@ -2,7 +2,7 @@ import { useEffect, useRef } from 'react';
 import { TypeAnimation } from 'react-type-animation';
 import { FaArrowDown } from 'react-icons/fa';
 
-const Hero = () => {
+const Intro = () => {
   const cursorRef = useRef(null);
 
   useEffect(() => {
@@ -131,4 +131,4 @@ const Hero = () => {
   );
 };
 
-export default Hero; 
+export default Intro; 
