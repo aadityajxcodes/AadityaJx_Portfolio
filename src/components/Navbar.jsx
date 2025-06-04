@@ -84,7 +84,7 @@ const Navbar = () => {
                     style={{
                       color: 'white',
                       fontSize: '1.5rem',
-                      transition: 'transform 0.2s ease-in-out, color 0.2s ease-in-out',
+                      transition: 'transform 0.2s ease-in-out, color 0.2s ease-in-out'
                     }}
                     onMouseOver={(e) => {
                       e.currentTarget.style.transform = 'scale(1.1)';
