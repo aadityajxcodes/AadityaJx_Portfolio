@@ -179,6 +179,12 @@ html {
     box-sizing: border-box !important;
     overflow-x: hidden !important;
   }
+  .container,
+  .skills-section .container {
+    height: auto !important;
+    max-height: none !important;
+    overflow: visible !important;
+  }
   * {
     box-sizing: border-box !important;
   }
