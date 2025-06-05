@@ -224,19 +224,35 @@
 
 @media (max-width: 768px) {
   .hero-title {
-    font-size: 2.5rem;
+    font-size: 3rem;
   }
   
   .hero-subtitle {
-    font-size: 1.75rem;
+    font-size: 2rem;
+  }
+  
+  .hero-image {
+    margin-top: 3rem;
   }
   
   .hero-cta {
     flex-direction: column;
+    align-items: center;
+  }
+  
+  .hero-cta .btn {
+    align-self: center;
+    width: 100%;
+    max-width: 250px;
+  }
+  
+  .hero-cta .btn-primary {
+    margin-right: 0 !important;
+    margin-bottom: 1rem;
   }
   
   .btn-outline {
-    margin-top: 1rem;
+    margin-top: 0;
   }
 }
 

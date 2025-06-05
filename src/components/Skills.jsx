@@ -11,30 +11,33 @@ const Skills = () => {
 
     const icons = container.querySelectorAll('.tech-icon');
     const numIcons = icons.length;
-    const radius = 250;
-    const centerX = container.offsetWidth / 2;
-    const centerY = container.offsetHeight / 2;
 
-    icons.forEach((icon, index) => {
-      const angle = (index / numIcons) * 2 * Math.PI;
-      const x = centerX + radius * Math.cos(angle) - icon.offsetWidth / 2;
-      const y = centerY + radius * Math.sin(angle) - icon.offsetHeight / 2;
+    const updateIconPositions = () => {
+      // Calculate radius based on container size, adjusted for icon size
+      const containerSize = Math.min(container.offsetWidth, container.offsetHeight);
+      // Adjust the divisor (e.g., 2.5, 3) based on how close to the edge you want the icons
+      const radius = (containerSize / 2) * 0.8; // Use 80% of half the smaller dimension as radius
 
-      icon.style.position = 'absolute';
-      icon.style.left = `${x}px`;
-      icon.style.top = `${y}px`;
-    });
+      const centerX = container.offsetWidth / 2;
+      const centerY = container.offsetHeight / 2;
 
-    const handleResize = () => {
-      const updatedCenterX = container.offsetWidth / 2;
-      const updatedCenterY = container.offsetHeight / 2;
       icons.forEach((icon, index) => {
         const angle = (index / numIcons) * 2 * Math.PI;
-        const x = updatedCenterX + radius * Math.cos(angle) - icon.offsetWidth / 2;
-        const y = updatedCenterY + radius * Math.sin(angle) - icon.offsetHeight / 2;
+        const x = centerX + radius * Math.cos(angle) - icon.offsetWidth / 2;
+        const y = centerY + radius * Math.sin(angle) - icon.offsetHeight / 2;
+
+        icon.style.position = 'absolute';
         icon.style.left = `${x}px`;
         icon.style.top = `${y}px`;
       });
+    };
+
+    // Initial positioning
+    updateIconPositions();
+
+    // Update positions on resize
+    const handleResize = () => {
+      updateIconPositions();
     };
 
     window.addEventListener('resize', handleResize);
