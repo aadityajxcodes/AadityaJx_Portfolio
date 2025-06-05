@@ -29,7 +29,9 @@ function App() {
       duration: 1000,
       once: true,
       offset: 100,
-      disable: false // Force AOS to run on all devices
+      disable: function() {
+        return /Mobi|Android|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+      }
     });
 
     // Hide the loader when the React app is ready (not just window load)

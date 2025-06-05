@@ -65,6 +65,7 @@ const Navbar = () => {
                   className="nav-link"
                   smooth={true}
                   duration={500}
+                  offset={-220}
                   onClick={() => setIsMenuOpen(false)}
                 >
                   {item.charAt(0).toUpperCase() + item.slice(1)}
