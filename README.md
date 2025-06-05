@@ -50,13 +50,13 @@ Make sure you have Node.js and a package manager (npm or yarn) installed on your
 
 *   Node.js: [https://nodejs.org/](https://nodejs.org/)
 *   npm: Comes with Node.js
-*   yarn: `npm install -g yarn`
+
 
 ### Installation
 
 1.  Clone the repository:
     ```bash
-    git clone https://github.com/your_username/AadityaJx_Portfolio.git
+    git clone https://github.com/aadityajxcodes/AadityaJx_Portfolio.git
     ```
 2.  Navigate to the project directory:
     ```bash
@@ -65,9 +65,8 @@ Make sure you have Node.js and a package manager (npm or yarn) installed on your
 3.  Install dependencies:
     ```bash
     npm install
-    # or
-    yarn install
-    ```
+    
+    
 
 ### Running Locally
 
@@ -100,8 +99,8 @@ Feel free to fork this repository and customize it to create your own portfolio!
 ## Contact
 
 -   Aaditya Jaiswal
--   Project Link: https://github.com/aadityajxcodes/aadityajxPortfolio.git
--   Live Demo Link: (Add your deployed website link here)
+-   Project Link: https://github.com/aadityajxcodes/aadityajx_Portfolio
+-   Live Demo Link: https://aadityajx-portfolio.vercel.app
 
 ## License
 
