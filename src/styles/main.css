@@ -233,6 +233,9 @@ html {
     float: none !important;
     text-align: center !important;
   }
+  .contact-section {
+    padding-bottom: 1.5rem !important; /* Reduce padding-bottom specifically for contact section on mobile */
+  }
 }
 
 /* Adjust section padding for very large screens */
@@ -704,25 +707,53 @@ body.menu-open main {
     padding: 0.5rem 1rem;
     font-size: 0.9rem;
   }
+  .footer {
+    margin-top: 2rem !important; /* Reduce margin-top of footer on mobile */
+    padding: 1.5rem 0 !important; /* Adjust footer padding */
+  }
 }
 
-/* Custom hamburger icon style for better visibility */
-.navbar-toggler-icon {
-  background-image: none !important;
+/* Hamburger to Cross Animation */
+.navbar-toggler {
+  width: 40px;
+  height: 40px;
+  position: relative;
+  border: none;
+  background: transparent;
+  z-index: 1100;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.navbar-toggler .bar {
+  display: block;
+  width: 28px;
+  height: 3px;
+  margin: 4px 0;
+  background: #fff;
+  border-radius: 2px;
+  transition: all 0.4s cubic-bezier(.4,2,.6,1);
   position: relative;
 }
+
+.navbar-toggler.active .bar:nth-child(1) {
+  transform: translateY(7px) rotate(45deg);
+}
+
+.navbar-toggler.active .bar:nth-child(2) {
+  opacity: 0;
+}
+
+.navbar-toggler.active .bar:nth-child(3) {
+  transform: translateY(-7px) rotate(-45deg);
+}
+
+/* Remove old hamburger icon custom styles */
+.navbar-toggler-icon,
 .navbar-toggler-icon::before,
 .navbar-toggler-icon::after,
 .navbar-toggler-icon span {
-  content: '';
-  display: block;
-  height: 3px;
-  width: 28px;
-  background: #fff;
-  margin: 6px 0;
-  border-radius: 2px;
-  transition: all 0.3s;
-}
-.navbar-toggler-icon span {
-  margin: 0;
+  display: none !important;
 } 

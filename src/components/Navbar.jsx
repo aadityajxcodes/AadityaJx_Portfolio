@@ -53,7 +53,9 @@ const Navbar = () => {
           onClick={() => setIsMenuOpen(!isMenuOpen)}
           aria-label="Toggle navigation"
         >
-          <span className="navbar-toggler-icon"></span>
+          <span className="bar"></span>
+          <span className="bar"></span>
+          <span className="bar"></span>
         </button>
 
         <div className={`collapse navbar-collapse ${isMenuOpen ? 'show' : ''}`}>
