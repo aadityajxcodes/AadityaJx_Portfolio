@@ -252,4 +252,10 @@
   .hero-image {
     padding-left: 2rem;
   }
+}
+
+@media (max-width: 576px) {
+  .hero-greeting {
+    margin-top: 2.5rem !important;
+  }
 } 

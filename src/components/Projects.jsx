@@ -154,7 +154,7 @@ const Projects = () => {
           variants={containerVariants}
           initial="hidden"
           whileInView="visible"
-          viewport={{ once: true }}
+          viewport={{ once: false, amount: 0.2 }}
         >
           {projects.map((project, index) => {
             const theme = projectThemes[project.title] || defaultTheme;

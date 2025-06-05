@@ -29,21 +29,21 @@ function App() {
       duration: 1000,
       once: true,
       offset: 100,
+      disable: false // Force AOS to run on all devices
     });
 
-    // Hide the loader when the page is fully loaded
-    const handleLoad = () => {
+    // Hide the loader when the React app is ready (not just window load)
+    const hideLoader = () => {
       const loader = document.getElementById('loader-container');
       if (loader) {
         loader.style.display = 'none';
       }
     };
 
-    window.addEventListener('load', handleLoad);
+    // Hide loader after a short delay to ensure React is mounted
+    setTimeout(hideLoader, 800);
 
-    return () => {
-      window.removeEventListener('load', handleLoad);
-    };
+    return () => {};
   }, []);
 
   return (

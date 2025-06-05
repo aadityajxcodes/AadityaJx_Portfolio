@@ -26,7 +26,14 @@ const CursorRing = styled.div`
   opacity: 0.6; /* Make the ring slightly transparent */
 `;
 
+const isMobile = () => {
+  if (typeof window === 'undefined') return false;
+  return /Mobi|Android|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+};
+
 const CustomCursor = () => {
+  if (isMobile()) return null;
+
   const cursor = useRef(null);
   const ring = useRef(null);
   const [isPointer, setIsPointer] = useState(false);

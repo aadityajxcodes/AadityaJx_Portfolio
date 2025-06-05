@@ -27,13 +27,13 @@ const Contact = () => {
             className="contact-info-expanded"
             initial={{ opacity: 0, y: 50 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
+            viewport={{ once: false, amount: 0.2 }}
             transition={{ duration: 0.5 }}
           >
             <div className="contact-card">
               <h3 style={{ color: '#06b6d4' }}>Get in Touch</h3>
               <p style={{ color: '#424242' }}>
-              I am currently seeking freelance opportunities as well as full-time roles. If you believe there’s potential for collaboration, feel free to reach out!
+              I am currently seeking freelance opportunities as well as full-time roles. If you believe there's potential for collaboration, feel free to reach out!
               </p>
               
               <div className="contact-details">
